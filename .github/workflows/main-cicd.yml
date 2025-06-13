@@ -45,17 +45,15 @@ jobs:
           restore-keys: ${{ runner.os }}-sonar
 
       - name: 🧐 Analisis SonarCloud (Continuous Inspection)
-        uses: SonarSource/sonarcloud-github-action@master # Selalu gunakan versi terbaru atau stabil
+        uses: SonarSource/sonarqube-scan-action@v5.0.0
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+            SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
         with:
-          projectBaseDir: .
-          args: >
-            -Dsonar.organization=${{ secrets.SONAR_ORGANIZATION }}
-            -Dsonar.projectKey=${{ secrets.SONAR_PROJECT_KEY }}
-            -Dsonar.sources=.
-            -Dsonar.host.url=${{ secrets.SONAR_HOST_URL }}
+            args: >
+                -Dsonar.organization=${{ secrets.SONAR_ORGANIZATION }}
+                -Dsonar.projectKey=${{ secrets.SONAR_PROJECT_KEY }}
+                -Dsonar.sources=.
+                -Dsonar.host.url=https://sonarcloud.io
             # Jika ada laporan cakupan tes (misal dari Jest LCOV), tambahkan:
             # -Dsonar.javascript.lcov.reportPaths=coverage/lcov.info
 
