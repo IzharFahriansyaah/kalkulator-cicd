@@ -82,7 +82,7 @@ jobs:
         uses: docker/build-push-action@v5
         with:
           context: .
-          file: ./Dockerfile/Dockerfile
+          file: ./Dockerfile/ Dockerfile
           push: false # Set 'true' untuk push ke registry (misal Docker Hub)
           tags: local/kalkulator-cicd:latest # Ganti jika push ke registry
           # Contoh jika push: ${{ secrets.DOCKERHUB_USERNAME }}/kalkulator-cicd:latest
@@ -110,4 +110,4 @@ jobs:
           # publish_branch: gh-pages # Default branch tujuan adalah gh-pages
           # user_name: 'github-actions[bot]'
           # user_email: 'github-actions[bot]@users.noreply.github.com'
-          # commit_message: 'Deploy kalkulator ke GitHub Page'
+          # commit_message: 'Deploy kalkulator ke GitHub Pages'
