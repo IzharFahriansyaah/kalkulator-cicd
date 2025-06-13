@@ -78,14 +78,13 @@ jobs:
       #     username: ${{ secrets.DOCKERHUB_USERNAME }}
       #     password: ${{ secrets.DOCKERHUB_TOKEN }}
 
-      - name: 🏗️ Build Docker image
+      - name: 🏗 Build Docker image
         uses: docker/build-push-action@v5
         with:
           context: .
-          file: ./Dockerfile/ Dockerfile
-          push: false # Set 'true' untuk push ke registry (misal Docker Hub)
-          tags: local/kalkulator-cicd:latest # Ganti jika push ke registry
-          # Contoh jika push: ${{ secrets.DOCKERHUB_USERNAME }}/kalkulator-cicd:latest
+          file: ./Dockerfile/Dockerfile
+          push: false
+          tags: local/kalkulator-cicd:latest
 
   deploy-to-github-pages:
     name: 🚀 Deploy ke GitHub Pages (Continuous Delivery/Deployment)
