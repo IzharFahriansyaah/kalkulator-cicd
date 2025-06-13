@@ -110,7 +110,7 @@ jobs:
 
       # Jika ada langkah build sebelum deploy (misalnya, optimasi aset)
       # - name: 🔨 Build Halaman Web (jika perlu)
-      #   run: npm install && npm run build-static # Contoh
+      #  run: npm install && npm run build-static # Contoh
 
       - name: 🌍 Deploy ke GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
